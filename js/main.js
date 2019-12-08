@@ -27,7 +27,7 @@ methodFromFirstInput.addEventListener('input', () => {
   if (!firstInput || !secondInput) {
     return;
   } else {
-    rounding ? methodFromResultInput.value = methodFromResultInput.value = roundNumber(((secondInput * (firstInput / 100)) / 100) * 100, 2) : methodFromResultInput.value = ((secondInput * (firstInput / 100)) / 100) * 100;
+    rounding ? methodFromResultInput.value = roundNumber(((secondInput * (firstInput / 100)) / 100) * 100, 2) : methodFromResultInput.value = ((secondInput * (firstInput / 100)) / 100) * 100;
   }
 });
 
@@ -39,7 +39,57 @@ methodFromSecondInput.addEventListener('input', () => {
   if (!firstInput || !secondInput) {
     return;
   } else {
-    rounding ? methodFromResultInput.value = methodFromResultInput.value = roundNumber(((secondInput * (firstInput / 100)) / 100) * 100, 2) : methodFromResultInput.value = ((secondInput * (firstInput / 100)) / 100) * 100;
+    rounding ? methodFromResultInput.value = roundNumber(((secondInput * (firstInput / 100)) / 100) * 100, 2) : methodFromResultInput.value = ((secondInput * (firstInput / 100)) / 100) * 100;
+  }
+});
+
+// Calculate OF
+methodOfFirstInput.addEventListener('input', () => {
+  const firstInput = methodOfFirstInput.value;
+  const secondInput = methodOfSecondInput.value;
+  const rounding = switchRounding.checked;
+
+  if (!firstInput || !secondInput) {
+    return;
+  } else {
+    rounding ? methodOfResultInput.value = roundNumber(((firstInput * 100) / secondInput), 2) : methodOfResultInput.value = ((firstInput * 100) / secondInput);
+  }
+});
+
+methodOfSecondInput.addEventListener('input', () => {
+  const firstInput = methodOfFirstInput.value;
+  const secondInput = methodOfSecondInput.value;
+  const rounding = switchRounding.checked;
+
+  if (!firstInput || !secondInput) {
+    return;
+  } else {
+    rounding ? methodOfResultInput.value = roundNumber(((firstInput * 100) / secondInput), 2) : methodOfResultInput.value = ((firstInput * 100) / secondInput);
+  }
+});
+
+// Calculate INCREASE
+methodIncreaseFirstInput.addEventListener('input', () => {
+  const firstInput = methodIncreaseFirstInput.value;
+  const secondInput = methodIncreaseSecondInput.value;
+  const rounding = switchRounding.checked;
+
+  if (!firstInput || !secondInput) {
+    return;
+  } else {
+    rounding ? methodIncreaseResultInput.value = roundNumber((((secondInput - firstInput) / firstInput) * 100), 2) : methodIncreaseResultInput.value = (((secondInput - firstInput) / firstInput) * 100);
+  }
+});
+
+methodIncreaseSecondInput.addEventListener('input', () => {
+  const firstInput = methodIncreaseFirstInput.value;
+  const secondInput = methodIncreaseSecondInput.value;
+  const rounding = switchRounding.checked;
+
+  if (!firstInput || !secondInput) {
+    return;
+  } else {
+    rounding ? methodIncreaseResultInput.value = roundNumber((((secondInput - firstInput) / firstInput) * 100), 2) : methodIncreaseResultInput.value = (((secondInput - firstInput) / firstInput) * 100);
   }
 });
 
@@ -74,20 +124,20 @@ switchRounding.addEventListener('click', () => {
       methodFromResultInput.value = roundNumber(((methodFromSecondInput.value * (methodFromFirstInput.value / 100)) / 100) * 100, 2);
     }
     if (methodOfFirstInput.value && methodOfSecondInput.value) {
-      methodOfResultInput.value = roundNumber(((methodOfSecondInput.value * (methodOfFirstInput.value / 100)) / 100) * 100, 2);
+      methodOfResultInput.value = roundNumber(((methodOfFirstInput.value * 100) / methodOfSecondInput.value), 2);
     }
     if (methodIncreaseFirstInput.value && methodIncreaseSecondInput.value) {
-      methodIncreaseResultInput.value = roundNumber(((methodIncreaseSecondInput.value * (methodIncreaseFirstInput.value / 100)) / 100) * 100, 2);
+      methodIncreaseResultInput.value = roundNumber((((secondInput - methodIncreaseSecondInput.value) / methodIncreaseFirstInput.value) * 100), 2);
     }
   } else {
     if (methodFromFirstInput.value && methodFromSecondInput.value) {
       methodFromResultInput.value = ((methodFromSecondInput.value * (methodFromFirstInput.value / 100)) / 100) * 100;
     }
     if (methodOfFirstInput.value && methodOfSecondInput.value) {
-      methodOfResultInput.value = ((methodOfSecondInput.value * (methodOfFirstInput.value / 100)) / 100) * 100;
+      methodOfResultInput.value = ((methodOfFirstInput.value * 100) / methodOfSecondInput.value);
     }
     if (methodIncreaseFirstInput.value && methodIncreaseSecondInput.value) {
-      methodIncreaseResultInput.value = ((methodIncreaseSecondInput.value * (methodIncreaseFirstInput.value / 100)) / 100) * 100;
+      methodIncreaseResultInput.value = (((methodIncreaseSecondInput.value - methodIncreaseFirstInput.value) / methodIncreaseFirstInput.value) * 100);
     }
   }
 });
