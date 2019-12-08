@@ -253,6 +253,37 @@ methodIncreaseResultInput.addEventListener('click', () => {
   }
 });
 
+// Clear input on click
+methodFromFirstInput.addEventListener('click', () => {
+  methodFromFirstInput.value = "";
+  methodFromResultInput.value = "";
+});
+
+methodFromSecondInput.addEventListener('click', () => {
+  methodFromSecondInput.value = "";
+  methodFromResultInput.value = "";
+});
+
+methodOfFirstInput.addEventListener('click', () => {
+  methodOfFirstInput.value = "";
+  methodOfResultInput.value = "";
+});
+
+methodOfSecondInput.addEventListener('click', () => {
+  methodOfSecondInput.value = "";
+  methodOfResultInput.value = "";
+});
+
+methodIncreaseFirstInput.addEventListener('click', () => {
+  methodIncreaseFirstInput.value = "";
+  methodIncreaseResultInput.value = "";
+});
+
+methodIncreaseSecondInput.addEventListener('click', () => {
+  methodIncreaseSecondInput.value = "";
+  methodIncreaseResultInput.value = "";
+});
+
 // SET LIGHT MODE
 
 function letItShine() {

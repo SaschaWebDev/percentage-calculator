@@ -4,6 +4,22 @@
   box-sizing: border-box;
 }
 
+*, *:before, *:after {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input, input:before, input:after {
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+} 
+
 body {
   background-color: #302d45;
   color: #fff;
@@ -608,6 +624,11 @@ input[type=number] {
   .mobile-align {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .mobile-column {
+    display: flex;
+    flex-direction: column;
   }
 
 }
