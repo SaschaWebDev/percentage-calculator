@@ -26,7 +26,7 @@ window.onload = () => {
 
   if(localStorage.getItem('dark-theme') !== null){
     localStorage.getItem('dark-theme') === "true" ? switchTheme.checked = true : switchTheme.checked = false;
-    localStorage.getItem('dark-theme') === "true" ? themeSymbol.classList.add("ghost") : themeSymbol.classList.add("book");;
+    localStorage.getItem('dark-theme') === "true" ? themeSymbol.classList.add("ghost") : themeSymbol.classList.add("book");
   }
 };
 
@@ -155,6 +155,8 @@ switchRounding.addEventListener('click', () => {
 
 switchTheme.addEventListener('click', () => {
   switchTheme.checked === true ? localStorage.setItem('dark-theme', true) : localStorage.setItem('dark-theme', false);
+  switchTheme.checked === true ? themeSymbol.classList.remove("book") : themeSymbol.classList.remove("ghost");
+  switchTheme.checked === true ? themeSymbol.classList.add("ghost") : themeSymbol.classList.add("book");
 });
 
 
