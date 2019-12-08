@@ -20,40 +20,40 @@
         <div class="method-container percent-from">
           <div class="left-elements">
             <span class="unselectable">What is</span>
-            <input class="modern percent" type="number"></input>
+            <input class="modern percent" type="number" id="from-first-input"></input>
             <span class="unselectable">% of</span>
-            <input class="modern long-input" type="number"></input>
+            <input class="modern long-input" type="number" id="from-second-input"></input>
             <span class="unselectable">?</span>
           </div>
           <div class="right-elements">
             <span class="result-text unselectable">=</span>
-            <input class="modern result resultmouse margin-right" readonly></input>
+            <input class="modern result resultmouse margin-right" readonly id="from-result-input"></input>
           </div>
         </div>
         <div class="method-container percent-of">
           <div class="left-elements">
-            <input class="modern long-input no-margin-left" type="number"></input>
+            <input class="modern long-input no-margin-left" type="number" id="of-first-input"></input>
             <span class="unselectable">is what percent of</span>
-            <input class="modern long-input" type="number"></input>
+            <input class="modern long-input" type="number" id="of-second-input"></input>
             <span class="unselectable">?</span>
           </div>
           <div class="right-elements">
             <span class="result-text unselectable">=</span>
-            <input class="modern percent resultmouse" readonly></input>
+            <input class="modern percent resultmouse" readonly id="of-result-input"></input>
             <span class="unselectable">%</span>
           </div>
         </div>
         <div class="method-container percent-increase">
           <div class="left-elements">
             <span class="unselectable">Percentdiff from</span>
-            <input class="modern long-input" type="number"></input>
+            <input class="modern long-input" type="number" id="increase-first-input"></input>
             <span class="unselectable">to</span>
-            <input class="modern long-input" type="number"></input>
+            <input class="modern long-input" type="number" id="increase-second-input"></input>
             <span class="unselectable">?</span>
           </div>
           <div class="right-elements">
             <span class="result-text unselectable">=</span>
-            <input class="modern percent resultmouse" readonly></input>
+            <input class="modern percent resultmouse" readonly id="increase-result-input"></input>
             <span class="unselectable">%</span>
           </div>
         </div>
@@ -61,22 +61,31 @@
       <div class="setting">
         <div class="option">
           <label class="vertical-align unselectable">Convert results to german notation</label>
-          <button class="btn convert">
+          <button class="btn convert" id="button-convert">
             <i class="fas fa-sync-alt"></i>
           </button>
+          </div>
+          <div class="option">
+            <label class="unselectable">Round to second decimal place</label>
+            <div class="switch-align">
+              <label class="switch">
+                <input type="checkbox" id="switch-rounding" checked />
+                <div></div>
+              </label>
+            </div>
           </div>
           <div class="option">
             <label class="unselectable">Darkmode</label>
             <div class="switch-align">
               <label class="switch">
-                <input type="checkbox" id="symbols" checked />
+                <input type="checkbox" id="switch-theme" checked />
                 <div></div>
               </label>
             </div>
           </div>
         </div>
         <div class="author">
-            <div class="author-text unselectable">Made with</div>
+            <div class="spacing-left author-text unselectable">Made with</div>
             <a class="heart-anchor" href="https://github.com/SaschaWebDev"><div class="heart"></div></a>
             <div class="author-text unselectable">by <a href="http://www.saschamajewsky.de">Sascha Majewsky</a></div>
         </div>
