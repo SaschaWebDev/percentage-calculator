@@ -11,85 +11,54 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>Percentage Calculator</title>
   </head>
+
   <body>
     <div class="container">
       <h2 class="unselectable">Percentage Calculator</h2>
-      <h6 lass="unselectable">Click result to copy to clipboard</h6>
+      <h6 class="unselectable">click on result to copy to clipboard</h6>
       <div class="methods-wrapper">
         <div class="method-container percent-from">
           <div class="left-elements">
-          <span>What is</span>
-          <input class="modern"></input>
-          <span>% of</span>
-          <input class="modern"></input>
-          <span>?</span>
-          </div>
+          <span class="unselectable">What is</span>
+          <input class="modern percent" type="number"></input>
+          <span class="unselectable">% of</span>
+          <input class="modern long-input" type="number"></input>
+          <span class="unselectable">?</span>
+        </div>
           <div class="right-elements">
-              <button class="btn unselectable" id="calc-from">
-                  Calculate
-                </button>
-              <input class="modern result" readonly></input>
+            <span class="result-text unselectable">=</span>
+            <input class="modern result" readonly></input>
           </div>
-
         </div>
         <div class="method-container percent-of"></div>
         <div class="method-container percent-increase"></div>
-
       </div>
-      <div class="result-container">
-        <span id="result"></span>
-       
-      </div>
-      <div class="settings">
-        <div class="setting">
-          <label class="unselectable"
-            >Password length (<span id="pwlength">20</span>)</label
-          >
-          <div class="slidecontainer">
-            <input
-              type="range"
-              id="length"
-              min="4"
-              max="40"
-              value="20"
-              class="slider"
-              id="myRange"
-            />
+      <div class="setting">
+        <div class="option">
+          <label class="vertical-align unselectable">convert results to german notation</label>
+          <button class="btn convert">
+            <i class="fas fa-sync-alt"></i>
+          </button>
           </div>
-          <!-- <input type="number" id="length" min="4" max="40" value="20" /> -->
+          <div class="option">
+            <label class="unselectable">darkmode</label>
+            <div class="switch-align">
+              <label class="switch">
+                <input type="checkbox" id="symbols" checked />
+                <div></div>
+              </label>
+            </div>
+          </div>
         </div>
-        <div class="setting">
-          <label class="unselectable">Include uppercase letters</label>
-          <label class="switch"
-            ><input type="checkbox" id="uppercase" checked />
-            <div></div>
-          </label>
-        </div>
-        <div class="setting">
-          <label class="unselectable">Include lowercase letters</label>
-          <label class="switch"
-            ><input type="checkbox" id="lowercase" checked />
-            <div></div>
-          </label>
-        </div>
-        <div class="setting">
-          <label class="unselectable">Include numbers</label>
-          <label class="switch"
-            ><input type="checkbox" id="numbers" checked />
-            <div></div>
-          </label>
-        </div>
-        <div class="setting">
-          <label class="unselectable">Include symbols</label>
-          <label class="switch"
-            ><input type="checkbox" id="symbols" checked />
-            <div></div>
-          </label>
+        <div class="author">
+            <div class="author-text unselectable">made with</div>
+            <a href="https://github.com/SaschaWebDev"><div class="heart"></div></a>
+            <div class="author-text unselectable">by <a href="http://www.saschamajewsky.de">Sascha Majewsky</a></div>
         </div>
       </div>
-      
     </div>
 
     <script src="js/main.js"></script>
+
   </body>
 </html>
