@@ -23,8 +23,8 @@ window.onload = () => {
     localStorage.getItem('rounding') === "true" ? switchRounding.checked = true : switchRounding.checked = false;
   }
 
-  if(localStorage.getItem('dark-theme')){
-    switchTheme.checked = localStorage.getItem('dark-theme');
+  if(localStorage.getItem('dark-theme') !== null){
+    localStorage.getItem('dark-theme') === "true" ? switchTheme.checked = true : switchTheme.checked = false;
   }
 };
 
@@ -107,14 +107,7 @@ methodIncreaseSecondInput.addEventListener('input', () => {
 });
 
 
-
-
-
-
-
- 
-
- // ROUNDING
+ // ROUNDING Math
 function roundNumber(num, scale) {
   if(!("" + num).includes("e")) {
     return +(Math.round(num + "e+" + scale)  + "e-" + scale);
@@ -128,6 +121,7 @@ function roundNumber(num, scale) {
   }
 }
 
+// PREFERENCES 
 
 switchRounding.addEventListener('click', () => {
   const rounding = switchRounding.checked;
@@ -157,6 +151,9 @@ switchRounding.addEventListener('click', () => {
   }
 });
 
+switchTheme.addEventListener('click', () => {
+  switchTheme.checked === true ? localStorage.setItem('dark-theme', true) : localStorage.setItem('dark-theme', false);
+});
 
 
 // MATH FUNCTIONS
@@ -172,7 +169,6 @@ function percentageOf(num1, num2) {
 function percentageIncrease(num1, num2) {
   return ((num2 - num1) / num1) * 100
 }
-
 
 
 // COPY TO CLIPBOARD
