@@ -282,6 +282,11 @@ input[type=number] {
   margin-left: 0px;
 }
 
+.spacing-desktop::after {
+  content: " ";
+  white-space: pre;
+}
+
 .ghost {
   background-image: url("/assets/ghost.png");
   height: 1.5rem;
@@ -570,8 +575,20 @@ input[type=number] {
 
 /* MEDIA QUERIES */
 
-/* mobile */
-@media screen and (max-width: 700px) {
+/* Ipad Pro */
+@media screen and (max-width: 1550px) and (min-width: 750px) {
+  .container {
+    width: 95%
+  }
+
+  .tablet-column span {
+    font-size: 0.85rem;
+  }
+  
+}
+
+/* mobile smartphone*/
+@media screen and (max-width: 750px) {
 
   body {
     justify-content: flex-start;
@@ -594,23 +611,9 @@ input[type=number] {
     height: 1rem;
   }
 
-  /* .option {
-    margin-bottom: 0.1rem;
-    margin-top: 0rem;
-  }
-
-
-
-  .convert {
-    /* width: 0.5rem;
-    height: 0.5rem;
-    min-width: 0.5rem;
-    min-height: 0.5rem;
-    */
-
   .option label {
-      font-size: 0.8rem;
-    }
+    font-size: 0.8rem;
+  }
 
   .switch {
     transform: scale(1.5);
@@ -648,7 +651,13 @@ input[type=number] {
   }
 
   .mobile-from {
-    width: 7.9rem;
+    width: 8.55rem;
+    margin-right: 0.4rem;
+    margin-left: 0.3rem;
+  }
+
+  .mobile-from-label {
+    margin-right: 0.7rem;
   }
 
   .mobile-of {
@@ -696,6 +705,10 @@ input[type=number] {
   .mobile-increase-label {
     margin-right: 0.1rem;
     margin-left: 0.3rem;
+  }
+
+  .spacing-desktop::after {
+    content: "";
   }
 
 }
