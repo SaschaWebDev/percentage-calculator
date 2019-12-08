@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/3da1a747b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Percentage Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="unselectable">Percentage Calculator</h2>
+      <h6 lass="unselectable">Click result to copy to clipboard</h6>
+      <div class="methods-wrapper">
+        <div class="method-container percent-from">
+          <div class="left-elements">
+          <span>What is</span>
+          <input class="modern"></input>
+          <span>% of</span>
+          <input class="modern"></input>
+          <span>?</span>
+          </div>
+          <div class="right-elements">
+              <button class="btn unselectable" id="calc-from">
+                  Calculate
+                </button>
+              <input class="modern result" readonly></input>
+          </div>
+
+        </div>
+        <div class="method-container percent-of"></div>
+        <div class="method-container percent-increase"></div>
+
+      </div>
+      <div class="result-container">
+        <span id="result"></span>
+       
+      </div>
+      <div class="settings">
+        <div class="setting">
+          <label class="unselectable"
+            >Password length (<span id="pwlength">20</span>)</label
+          >
+          <div class="slidecontainer">
+            <input
+              type="range"
+              id="length"
+              min="4"
+              max="40"
+              value="20"
+              class="slider"
+              id="myRange"
+            />
+          </div>
+          <!-- <input type="number" id="length" min="4" max="40" value="20" /> -->
+        </div>
+        <div class="setting">
+          <label class="unselectable">Include uppercase letters</label>
+          <label class="switch"
+            ><input type="checkbox" id="uppercase" checked />
+            <div></div>
+          </label>
+        </div>
+        <div class="setting">
+          <label class="unselectable">Include lowercase letters</label>
+          <label class="switch"
+            ><input type="checkbox" id="lowercase" checked />
+            <div></div>
+          </label>
+        </div>
+        <div class="setting">
+          <label class="unselectable">Include numbers</label>
+          <label class="switch"
+            ><input type="checkbox" id="numbers" checked />
+            <div></div>
+          </label>
+        </div>
+        <div class="setting">
+          <label class="unselectable">Include symbols</label>
+          <label class="switch"
+            ><input type="checkbox" id="symbols" checked />
+            <div></div>
+          </label>
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
