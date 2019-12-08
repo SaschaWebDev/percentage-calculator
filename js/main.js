@@ -16,6 +16,19 @@ const switchRounding = document.getElementById('switch-rounding');
 const switchTheme = document.getElementById('switch-theme');
 
 
+// On window load check for Dark Mode and rounding preferences in localStorage
+window.onload = () => {
+  // String to number with + prefix
+  if(localStorage.getItem('rounding') !== null){
+    localStorage.getItem('rounding') === "true" ? switchRounding.checked = true : switchRounding.checked = false;
+  }
+
+  if(localStorage.getItem('dark-theme')){
+    switchTheme.checked = localStorage.getItem('dark-theme');
+  }
+};
+
+
 // CALCULATE RESULTS
 
 // Calculate FROM
@@ -27,7 +40,7 @@ methodFromFirstInput.addEventListener('input', () => {
   if (!firstInput || !secondInput) {
     return;
   } else {
-    rounding ? methodFromResultInput.value = roundNumber(((secondInput * (firstInput / 100)) / 100) * 100, 2) : methodFromResultInput.value = ((secondInput * (firstInput / 100)) / 100) * 100;
+    rounding ? methodFromResultInput.value = roundNumber(percentageFrom(firstInput, secondInput), 2) : methodFromResultInput.value = percentageFrom(firstInput, secondInput);
   }
 });
 
@@ -39,7 +52,7 @@ methodFromSecondInput.addEventListener('input', () => {
   if (!firstInput || !secondInput) {
     return;
   } else {
-    rounding ? methodFromResultInput.value = roundNumber(((secondInput * (firstInput / 100)) / 100) * 100, 2) : methodFromResultInput.value = ((secondInput * (firstInput / 100)) / 100) * 100;
+    rounding ? methodFromResultInput.value = roundNumber(percentageFrom(firstInput, secondInput), 2) : methodFromResultInput.value = percentageFrom(firstInput, secondInput);
   }
 });
 
@@ -52,7 +65,7 @@ methodOfFirstInput.addEventListener('input', () => {
   if (!firstInput || !secondInput) {
     return;
   } else {
-    rounding ? methodOfResultInput.value = roundNumber(((firstInput * 100) / secondInput), 2) : methodOfResultInput.value = ((firstInput * 100) / secondInput);
+    rounding ? methodOfResultInput.value = roundNumber(percentageOf(firstInput, secondInput), 2) : methodOfResultInput.value = percentageOf(firstInput, secondInput);
   }
 });
 
@@ -64,7 +77,7 @@ methodOfSecondInput.addEventListener('input', () => {
   if (!firstInput || !secondInput) {
     return;
   } else {
-    rounding ? methodOfResultInput.value = roundNumber(((firstInput * 100) / secondInput), 2) : methodOfResultInput.value = ((firstInput * 100) / secondInput);
+    rounding ? methodOfResultInput.value = roundNumber(percentageOf(firstInput, secondInput), 2) : methodOfResultInput.value = percentageOf(firstInput, secondInput);
   }
 });
 
@@ -77,7 +90,7 @@ methodIncreaseFirstInput.addEventListener('input', () => {
   if (!firstInput || !secondInput) {
     return;
   } else {
-    rounding ? methodIncreaseResultInput.value = roundNumber((((secondInput - firstInput) / firstInput) * 100), 2) : methodIncreaseResultInput.value = (((secondInput - firstInput) / firstInput) * 100);
+    rounding ? methodIncreaseResultInput.value = roundNumber(percentageIncrease(firstInput, secondInput), 2) : methodIncreaseResultInput.value = percentageIncrease(firstInput, secondInput);
   }
 });
 
@@ -89,7 +102,7 @@ methodIncreaseSecondInput.addEventListener('input', () => {
   if (!firstInput || !secondInput) {
     return;
   } else {
-    rounding ? methodIncreaseResultInput.value = roundNumber((((secondInput - firstInput) / firstInput) * 100), 2) : methodIncreaseResultInput.value = (((secondInput - firstInput) / firstInput) * 100);
+    rounding ? methodIncreaseResultInput.value = roundNumber(percentageIncrease(firstInput, secondInput), 2) : methodIncreaseResultInput.value = percentageIncrease(firstInput, secondInput);
   }
 });
 
@@ -99,7 +112,7 @@ methodIncreaseSecondInput.addEventListener('input', () => {
 
 
 
- // MATH FUNCTIONS
+ 
 
  // ROUNDING
 function roundNumber(num, scale) {
@@ -127,8 +140,9 @@ switchRounding.addEventListener('click', () => {
       methodOfResultInput.value = roundNumber(((methodOfFirstInput.value * 100) / methodOfSecondInput.value), 2);
     }
     if (methodIncreaseFirstInput.value && methodIncreaseSecondInput.value) {
-      methodIncreaseResultInput.value = roundNumber((((secondInput - methodIncreaseSecondInput.value) / methodIncreaseFirstInput.value) * 100), 2);
+      methodIncreaseResultInput.value = roundNumber((((methodIncreaseSecondInput.value - methodIncreaseFirstInput.value) / methodIncreaseFirstInput.value) * 100), 2);
     }
+    localStorage.setItem('rounding', true);
   } else {
     if (methodFromFirstInput.value && methodFromSecondInput.value) {
       methodFromResultInput.value = ((methodFromSecondInput.value * (methodFromFirstInput.value / 100)) / 100) * 100;
@@ -139,8 +153,25 @@ switchRounding.addEventListener('click', () => {
     if (methodIncreaseFirstInput.value && methodIncreaseSecondInput.value) {
       methodIncreaseResultInput.value = (((methodIncreaseSecondInput.value - methodIncreaseFirstInput.value) / methodIncreaseFirstInput.value) * 100);
     }
+    localStorage.setItem('rounding', false);
   }
 });
+
+
+
+// MATH FUNCTIONS
+
+function percentageFrom(num1, num2) {
+  return ((num2 * (num1 / 100)) / 100) * 100;
+}
+
+function percentageOf(num1, num2) {
+  return (num1 * 100) / num2;
+}
+
+function percentageIncrease(num1, num2) {
+  return ((num2 - num1) / num1) * 100
+}
 
 
 
