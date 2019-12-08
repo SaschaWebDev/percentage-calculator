@@ -161,6 +161,8 @@ span {
   border-radius: 50%;
   height: 2.5rem;
   margin-right: 0.2rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
 }
 
 .convert:hover {

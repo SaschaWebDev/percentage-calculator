@@ -14,8 +14,9 @@ const methodIncreaseResultInput = document.getElementById('increase-result-input
 const buttonConvert = document.getElementById('button-convert');
 const switchRounding = document.getElementById('switch-rounding');
 const switchTheme = document.getElementById('switch-theme');
-const themeSymbol = document.getElementById('theme-symbol');
 
+const themeSymbol = document.getElementById('theme-symbol');
+const convertSymbol = document.getElementById('convert-symbol');
 
 // On window load check for Dark Mode and rounding preferences in localStorage
 window.onload = () => {
@@ -158,6 +159,23 @@ switchTheme.addEventListener('click', () => {
   switchTheme.checked === true ? themeSymbol.classList.remove("book") : themeSymbol.classList.remove("ghost");
   switchTheme.checked === true ? themeSymbol.classList.add("ghost") : themeSymbol.classList.add("book");
 });
+
+convertSymbol.addEventListener('click', () => {
+  convertSymbol.classList.add('fa-spin');
+  setTimeout(
+    function() {
+      convertSymbol.classList.remove('fa-spin');
+    }, 1000);
+});
+
+buttonConvert.addEventListener('click', () => {
+  convertSymbol.classList.add('fa-spin');
+  setTimeout(
+    function() {
+      convertSymbol.classList.remove('fa-spin');
+    }, 1000);
+});
+
 
 
 // MATH FUNCTIONS
