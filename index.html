@@ -9,6 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/percentage-calc-favicon.png">
     <title>Percentage Calculator</title>
   </head>
 
@@ -22,10 +23,11 @@
             <div>
               <span class="unselectable">What is</span>
               <input class="modern percent mobile-align" type="number" id="from-first-input"></input>
+              <span class="unselectable">%</span>
             </div>
             <div>
-            <span class="unselectable">% of</span>
-              <input class="modern long-input mobile-align" type="number" id="from-second-input"></input>
+            <span class="unselectable">of</span>
+              <input class="modern long-input mobile-align mobile-from" type="number" id="from-second-input"></input>
               <span class="unselectable">?</span>
             </div>
           </div>
@@ -35,29 +37,41 @@
           </div>
         </div>
         <div class="method-container percent-of">
-          <div class="left-elements">
-            <input class="modern long-input no-margin-left" type="number" id="of-first-input"></input>
-            <span class="unselectable">is what percent of</span>
-            <input class="modern long-input" type="number" id="of-second-input"></input>
-            <span class="unselectable">?</span>
+          <div class="left-elements mobile-column">
+            <div>
+              <input class="modern long-input no-margin-left mobile-align" type="number" id="of-first-input"></input>
+              <span class="unselectable">is what %</span>
+            </div>
+            <div>
+              <span class="unselectable">of</span>
+              <input class="modern long-input mobile-align mobile-of" type="number" id="of-second-input"></input>
+              <span class="unselectable">?</span>
+            </div>
           </div>
           <div class="right-elements">
-            <span class="result-text unselectable">=</span>
-            <input class="modern percent resultmouse" readonly id="of-result-input"></input>
+            <span class="result-text unselectable mobile-of-label">=</span>
+            <input class="modern percent resultmouse mobile-result-of" readonly id="of-result-input"></input>
             <span class="unselectable">%</span>
           </div>
         </div>
         <div class="method-container percent-increase">
-          <div class="left-elements">
-            <span class="unselectable">In/Decrease % from</span>
-            <input class="modern long-input" type="number" id="increase-first-input"></input>
-            <span class="unselectable">to</span>
-            <input class="modern long-input" type="number" id="increase-second-input"></input>
-            <span class="unselectable">?</span>
+          <div class="left-elements mobile-column">
+            <div>
+              <span class="unselectable">In<span class="mobile-expand"></span>/<span class="mobile-expand-second"></span>Decrease <span class="mobile-expand-third"></span>%</span>
+            </div>
+            <div>
+              <span class="unselectable">from</span>
+              <input class="modern long-input mobile-align mobile-increase-first" type="number" id="increase-first-input"></input>
+            </div>
+            <div>
+              <span class="unselectable">to</span>
+              <input class="modern long-input mobile-align mobile-increase-second" type="number" id="increase-second-input"></input>
+              <span class="unselectable">?</span>
+            </div>
           </div>
           <div class="right-elements">
-            <span class="result-text unselectable">=</span>
-            <input class="modern percent resultmouse" readonly id="increase-result-input"></input>
+            <span class="result-text unselectable mobile-increase-label">=</span>
+            <input class="modern percent resultmouse mobile-result-increase" readonly id="increase-result-input"></input>
             <span class="unselectable">%</span>
           </div>
         </div>
@@ -79,7 +93,7 @@
             </div>
           </div>
           <div class="option">
-            <div class="" id="theme-symbol"></div>
+            <div class="" onclick="" id="theme-symbol"></div>
             <label class="unselectable">Dark Mode</label>
             <div class="switch-align">
               <label class="switch">

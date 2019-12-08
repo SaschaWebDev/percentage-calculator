@@ -594,21 +594,29 @@ input[type=number] {
     height: 1rem;
   }
 
-  .option {
+  /* .option {
     margin-bottom: 0.1rem;
     margin-top: 0rem;
   }
 
-  .option label {
-    font-size: 0.5rem;
-  }
+
 
   .convert {
-    width: 0.5rem;
+    /* width: 0.5rem;
     height: 0.5rem;
     min-width: 0.5rem;
     min-height: 0.5rem;
+    */
+
+  .option label {
+      font-size: 0.8rem;
+    }
+
+  .switch {
+    transform: scale(1.5);
+    margin-bottom: 1rem;
   }
+
   .method-container {
     flex-direction: column;
   }
@@ -622,13 +630,72 @@ input[type=number] {
   }
 
   .mobile-align {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
   }
 
   .mobile-column {
     display: flex;
     flex-direction: column;
+  }
+
+  .right-elements {
+    margin-top: 0.7rem;
+  }
+
+  .long-input {
+    width: 7rem;
+  }
+
+  .mobile-from {
+    width: 7.9rem;
+  }
+
+  .mobile-of {
+    width: 10rem;
+  }
+
+  .mobile-of-label {
+    padding-left: 0.3rem;
+  }
+
+  .mobile-result-of {
+    width: 10rem;
+    margin-left: 0.9rem;
+  }
+
+  .mobile-expand::after {
+    content: "crease ";
+    margin-right: 0.3rem;
+  }
+
+  .mobile-expand-second::after {
+    content: " ";
+    margin-right: 0.3rem;
+  }
+
+  .mobile-expand-third {
+    margin-right: 0.3rem;
+  }
+
+  .mobile-increase-first {
+    width: 8rem;
+    margin-right: 1.2rem;
+    margin-left: 0.7rem;
+  }
+
+  .mobile-increase-second {
+    width: 9.5rem;
+  }
+
+  .mobile-result-increase {
+    width: 9.5rem;
+    margin-left: 0.8rem;
+  }
+
+  .mobile-increase-label {
+    margin-right: 0.1rem;
+    margin-left: 0.3rem;
   }
 
 }

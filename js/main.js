@@ -41,7 +41,6 @@ window.onload = () => {
   }
 };
 
-
 // CALCULATE RESULTS
 
 // Calculate FROM
@@ -254,6 +253,7 @@ methodIncreaseResultInput.addEventListener('click', () => {
 });
 
 // Clear input on click
+
 methodFromFirstInput.addEventListener('click', () => {
   methodFromFirstInput.value = "";
   methodFromResultInput.value = "";
