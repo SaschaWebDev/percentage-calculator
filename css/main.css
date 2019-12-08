@@ -74,6 +74,14 @@ h2, h6 {
   transform: translate3d(100%, 0, 0);
 }
 
+.switch-light div {
+  background: #757577;
+}
+
+.switch-light input:checked + div {
+  background: #d3d0d0;
+}
+
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -165,12 +173,20 @@ span {
   min-height: 2.5rem;
 }
 
-.convert:hover {
+.convert-dark:hover {
   background: rgba(47, 45, 68, 0.7);
 }
 
-.convert:active {
+.convert-dark:active {
   background: rgb(57, 55, 83);
+}
+
+.convert-light:hover {
+  background: rgb(187, 184, 184);
+}
+
+.convert-light:active {
+  background: rgb(207, 204, 204);
 }
 
 .option {
@@ -238,6 +254,18 @@ input[type=number] {
   margin-right: 0.4rem;
 }
 
+.heart-anchor {
+  padding-top: 0.45rem;
+}
+
+.margin-right {
+  margin-right: 1.5rem;
+}
+
+.no-margin-left {
+  margin-left: 0px;
+}
+
 .ghost {
   background-image: url("/assets/ghost.png");
   height: 1.5rem;
@@ -246,7 +274,6 @@ input[type=number] {
   background-size: contain;
   margin-left: 0.3rem;
   margin-right: 0.4rem;
-
 }
 
 .ghost:hover{
@@ -296,7 +323,7 @@ input[type=number] {
   -ms-transform-origin: 50% 50%;
 }
 
-
+/* ANIMATION EFFECTS */
 
 @keyframes animationFrames{
   0% {
@@ -403,20 +430,23 @@ input[type=number] {
   }
 }
 
-.heart-anchor {
-  padding-top: 0.45rem;
-}
-
-.margin-right {
-  margin-right: 1.5rem;
-}
-
-.no-margin-left {
-  margin-left: 0px;
-}
-
+/* MEDIA QUERIES */
 
 /* mobile */
 @media screen and (max-width: 700px) {
 
+}
+
+/* LIGHT THEME */
+
+.light-background {
+  background: white;
+}
+
+.light-container {
+  background: grey;
+}
+
+.light-method-container {
+  background: darkgrey;
 }

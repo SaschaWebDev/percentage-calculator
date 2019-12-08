@@ -1,4 +1,10 @@
 // DOM Elements
+const body = document.body;
+const container = document.querySelector('.container');
+const methodContainer = document.querySelectorAll('.method-container');
+const inputs = document.querySelectorAll('.modern');
+const switches = document.querySelectorAll('.switch');
+
 const methodFromFirstInput = document.getElementById('from-first-input');
 const methodFromSecondInput = document.getElementById('from-second-input');
 const methodFromResultInput = document.getElementById('from-result-input');
@@ -28,6 +34,10 @@ window.onload = () => {
   if(localStorage.getItem('dark-theme') !== null){
     localStorage.getItem('dark-theme') === "true" ? switchTheme.checked = true : switchTheme.checked = false;
     localStorage.getItem('dark-theme') === "true" ? themeSymbol.classList.add("ghost") : themeSymbol.classList.add("book");
+    // set light theme
+    if(localStorage.getItem('dark-theme') === "false"){
+      letItShine();
+    }
   }
 };
 
@@ -158,6 +168,7 @@ switchTheme.addEventListener('click', () => {
   switchTheme.checked === true ? localStorage.setItem('dark-theme', true) : localStorage.setItem('dark-theme', false);
   switchTheme.checked === true ? themeSymbol.classList.remove("book") : themeSymbol.classList.remove("ghost");
   switchTheme.checked === true ? themeSymbol.classList.add("ghost") : themeSymbol.classList.add("book");
+  switchTheme.checked === true ? letsGetSpooky() : letItShine();
 });
 
 convertSymbol.addEventListener('click', () => {
@@ -175,7 +186,6 @@ buttonConvert.addEventListener('click', () => {
       convertSymbol.classList.remove('fa-spin');
     }, 1000);
 });
-
 
 
 // MATH FUNCTIONS
@@ -242,3 +252,29 @@ methodIncreaseResultInput.addEventListener('click', () => {
     textarea.remove();
   }
 });
+
+// SET LIGHT MODE
+
+function letItShine() {
+  body.classList.add('light-background');
+      container.classList.add('light-container');
+      methodContainer.forEach(element => element.classList.add('light-method-container'))
+      inputs.forEach(element => element.classList.add('light-container'))
+      buttonConvert.classList.add('light-method-container')
+      buttonConvert.classList.remove('convert-dark')
+      buttonConvert.classList.add('convert-light')
+      switches.forEach(element => element.classList.add('light-method-container'))
+      switches.forEach(element => element.classList.add('switch-light'))
+}
+
+function letsGetSpooky() {
+  body.classList.remove('light-background');
+  container.classList.remove('light-container');
+  methodContainer.forEach(element => element.classList.remove('light-method-container'))
+  inputs.forEach(element => element.classList.remove('light-container'))
+  buttonConvert.classList.remove('light-method-container')
+  buttonConvert.classList.add('convert-dark')
+  buttonConvert.classList.remove('convert-light')
+  switches.forEach(element => element.classList.remove('light-method-container'))
+  switches.forEach(element => element.classList.remove('switch-light'))
+}
