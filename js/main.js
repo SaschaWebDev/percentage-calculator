@@ -14,6 +14,7 @@ const methodIncreaseResultInput = document.getElementById('increase-result-input
 const buttonConvert = document.getElementById('button-convert');
 const switchRounding = document.getElementById('switch-rounding');
 const switchTheme = document.getElementById('switch-theme');
+const themeSymbol = document.getElementById('theme-symbol');
 
 
 // On window load check for Dark Mode and rounding preferences in localStorage
@@ -25,6 +26,7 @@ window.onload = () => {
 
   if(localStorage.getItem('dark-theme') !== null){
     localStorage.getItem('dark-theme') === "true" ? switchTheme.checked = true : switchTheme.checked = false;
+    localStorage.getItem('dark-theme') === "true" ? themeSymbol.classList.add("ghost") : themeSymbol.classList.add("book");;
   }
 };
 
