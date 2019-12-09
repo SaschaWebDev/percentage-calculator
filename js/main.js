@@ -134,14 +134,6 @@ methodIncreaseSecondInput.addEventListener('input', () => {
   }
 });
 
-// Prevent insertion of comma in inputs
-
-methodFromFirstInput.addEventListener('beforeinput', e => {
-  e === ',' ? console.log('LOL') : console.log("WELL");
-  
-});
-
-
  // ROUNDING Math
 function roundNumber(num, scale) {
   if(!("" + num).includes("e")) {
@@ -157,7 +149,6 @@ function roundNumber(num, scale) {
 }
 
 // PREFERENCES 
-
 switchRounding.addEventListener('click', () => {
   const rounding = switchRounding.checked;
 
@@ -202,7 +193,6 @@ convertSymbol.addEventListener('click', () => {
 });
 
 // Convert results once to german notation
-
 buttonConvert.addEventListener('click', () => {
   convertSymbol.classList.add('fa-spin');
   setTimeout(
@@ -238,9 +228,7 @@ buttonConvert.addEventListener('click', () => {
     }
 });
 
-
 // MATH FUNCTIONS
-
 function percentageFrom(num1, num2) {
   return ((num2 * (num1 / 100)) / 100) * 100;
 }
@@ -252,7 +240,6 @@ function percentageOf(num1, num2) {
 function percentageIncrease(num1, num2) {
   return ((num2 - num1) / num1) * 100
 }
-
 
 // COPY TO CLIPBOARD
 
@@ -305,7 +292,6 @@ methodIncreaseResultInput.addEventListener('click', () => {
 });
 
 // Clear input on click
-
 methodFromFirstInput.addEventListener('click', () => {
   methodFromFirstInput.value = "";
   methodFromResultInput.value = "";
@@ -337,7 +323,6 @@ methodIncreaseSecondInput.addEventListener('click', () => {
 });
 
 // SET LIGHT MODE
-
 function letItShine() {
   body.classList.add('light-background');
       container.classList.add('light-container');

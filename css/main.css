@@ -326,7 +326,7 @@ input[type=number] {
   margin-top: 0.2rem;
 }
 
-.book:hover{
+.book:hover {
   animation: animationFrames linear 1s;
   animation-iteration-count: 1;
   transform-origin: 50% 50%;
@@ -346,7 +346,7 @@ input[type=number] {
 
 /* ANIMATION EFFECTS */
 
-@keyframes animationFrames{
+@keyframes animationFrames {
   0% {
     transform:  rotate(0deg) ;
   }
@@ -367,7 +367,7 @@ input[type=number] {
   }
 }
 
-@-moz-keyframes animationFrames{
+@-moz-keyframes animationFrames {
   0% {
     -moz-transform:  rotate(0deg) ;
   }
@@ -451,8 +451,6 @@ input[type=number] {
     -ms-transform:  rotate(0deg) ;
   }
 }
-
-
 
 @keyframes animationFramesGhost {
   0% {
@@ -584,12 +582,10 @@ input[type=number] {
   .tablet-column span {
     font-size: 0.85rem;
   }
-  
 }
 
 /* mobile smartphone*/
 @media screen and (max-width: 780px) {
-
   body {
     justify-content: flex-start;
   }
@@ -710,7 +706,6 @@ input[type=number] {
   .spacing-desktop::after {
     content: "";
   }
-
 }
 
 /* LIGHT THEME */
