@@ -43,6 +43,10 @@ window.onload = () => {
       letItShine();
     }
   }
+
+  if(localStorage.getItem('dark-theme') === null) {
+    themeSymbol.classList.add("ghost");
+  }
 };
 
 // CALCULATE RESULTS
@@ -178,10 +182,17 @@ switchRounding.addEventListener('click', () => {
 });
 
 switchTheme.addEventListener('click', () => {
-  switchTheme.checked === true ? localStorage.setItem('dark-theme', true) : localStorage.setItem('dark-theme', false);
-  switchTheme.checked === true ? themeSymbol.classList.remove("book") : themeSymbol.classList.remove("ghost");
-  switchTheme.checked === true ? themeSymbol.classList.add("ghost") : themeSymbol.classList.add("book");
-  switchTheme.checked === true ? letsGetSpooky() : letItShine();
+  if(switchTheme.checked) {
+    localStorage.setItem('dark-theme', true);
+    themeSymbol.classList.remove("book");
+    themeSymbol.classList.add("ghost");
+    letsGetSpooky();
+  } else {
+    localStorage.setItem('dark-theme', false);
+    themeSymbol.classList.remove("ghost");
+    themeSymbol.classList.add("book");
+    letItShine();
+  }
 });
 
 convertSymbol.addEventListener('click', () => {
@@ -335,6 +346,7 @@ function letItShine() {
       switches.forEach(element => element.classList.add('switch-light'))
 }
 
+// SET DARK MODE
 function letsGetSpooky() {
   body.classList.remove('light-background');
   container.classList.remove('light-container');
