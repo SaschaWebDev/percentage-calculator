@@ -24,6 +24,10 @@ const switchTheme = document.getElementById('switch-theme');
 const themeSymbol = document.getElementById('theme-symbol');
 const convertSymbol = document.getElementById('convert-symbol');
 
+let resultFromLocalized = false;
+let resultOfLocalized = false;
+let resultIncreaseLocalized = false;
+
 // On window load check for Dark Mode and rounding preferences in localStorage
 window.onload = () => {
   // String to number with + prefix
@@ -49,6 +53,8 @@ methodFromFirstInput.addEventListener('input', () => {
   const secondInput = methodFromSecondInput.value;
   const rounding = switchRounding.checked;
 
+  resultFromLocalized = false;
+
   if (!firstInput || !secondInput) {
     return;
   } else {
@@ -60,6 +66,8 @@ methodFromSecondInput.addEventListener('input', () => {
   const firstInput = methodFromFirstInput.value;
   const secondInput = methodFromSecondInput.value;
   const rounding = switchRounding.checked;
+
+  resultFromLocalized = false;
 
   if (!firstInput || !secondInput) {
     return;
@@ -74,6 +82,8 @@ methodOfFirstInput.addEventListener('input', () => {
   const secondInput = methodOfSecondInput.value;
   const rounding = switchRounding.checked;
 
+  resultOfLocalized = false;
+  
   if (!firstInput || !secondInput) {
     return;
   } else {
@@ -85,6 +95,8 @@ methodOfSecondInput.addEventListener('input', () => {
   const firstInput = methodOfFirstInput.value;
   const secondInput = methodOfSecondInput.value;
   const rounding = switchRounding.checked;
+
+  resultOfLocalized = false;
 
   if (!firstInput || !secondInput) {
     return;
@@ -99,6 +111,8 @@ methodIncreaseFirstInput.addEventListener('input', () => {
   const secondInput = methodIncreaseSecondInput.value;
   const rounding = switchRounding.checked;
 
+  resultIncreaseLocalized = false;
+
   if (!firstInput || !secondInput) {
     return;
   } else {
@@ -110,6 +124,8 @@ methodIncreaseSecondInput.addEventListener('input', () => {
   const firstInput = methodIncreaseFirstInput.value;
   const secondInput = methodIncreaseSecondInput.value;
   const rounding = switchRounding.checked;
+
+  resultIncreaseLocalized = false;
 
   if (!firstInput || !secondInput) {
     return;
@@ -178,12 +194,41 @@ convertSymbol.addEventListener('click', () => {
     }, 1000);
 });
 
+// Convert results once to german notation
+
 buttonConvert.addEventListener('click', () => {
   convertSymbol.classList.add('fa-spin');
   setTimeout(
     function() {
       convertSymbol.classList.remove('fa-spin');
     }, 1000);
+
+    if(methodFromFirstInput.value && methodFromSecondInput.value && !resultFromLocalized) {
+      methodFromResultInput.value = parseFloat(methodFromResultInput.value).toLocaleString('de-DE', {
+        style: 'decimal', 
+        currency: 'EUR', 
+        minimumFractionDigits: 2
+      });
+      resultFromLocalized = true;
+    }
+
+    if(methodOfFirstInput.value && methodOfSecondInput.value && !resultOfLocalized) {
+      methodOfResultInput.value = parseFloat(methodOfResultInput.value).toLocaleString('de-DE', {
+        style: 'decimal', 
+        currency: 'EUR', 
+        minimumFractionDigits: 2
+      });
+      resultOfLocalized = true;
+    }
+
+    if(methodIncreaseFirstInput.value && methodIncreaseSecondInput.value && !resultIncreaseLocalized) {
+      methodIncreaseResultInput.value = parseFloat(methodIncreaseResultInput.value).toLocaleString('de-DE', {
+        style: 'decimal', 
+        currency: 'EUR', 
+        minimumFractionDigits: 2
+      });
+      resultIncreaseLocalized = true;
+    }
 });
 
 
