@@ -134,6 +134,13 @@ methodIncreaseSecondInput.addEventListener('input', () => {
   }
 });
 
+// Prevent insertion of comma in inputs
+
+methodFromFirstInput.addEventListener('beforeinput', e => {
+  e === ',' ? console.log('LOL') : console.log("WELL");
+  
+});
+
 
  // ROUNDING Math
 function roundNumber(num, scale) {
