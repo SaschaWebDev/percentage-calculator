@@ -576,7 +576,7 @@ input[type=number] {
 /* MEDIA QUERIES */
 
 /* Ipad Pro, Ipad, Low width Desktop, Landscape Mobile */
-@media screen and (max-width: 1550px) and (min-width: 750px) {
+@media screen and (max-width: 1550px) and (min-width: 781px) {
   .container {
     width: 95%
   }
@@ -588,7 +588,7 @@ input[type=number] {
 }
 
 /* mobile smartphone*/
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 780px) {
 
   body {
     justify-content: flex-start;
