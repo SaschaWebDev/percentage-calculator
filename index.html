@@ -1,118 +1,126 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script
-      src="https://kit.fontawesome.com/3da1a747b2.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/percentage-calc-favicon.png">
-    <title>Percentage Calculator</title>
-  </head>
 
-  <body>
-    <div class="container">
-      <h2 class="unselectable">Percentage Calculator</h2>
-      <h6 class="unselectable">Click on result to copy to clipboard</h6>
-      <div class="methods-wrapper">
-        <div class="method-container percent-from">
-          <div class="left-elements mobile-column">
-            <div>
-              <span class="unselectable">What is</span>
-              <input class="modern percent mobile-align" onkeydown="return (event.keyCode!=188);" type="number" id="from-first-input"></input>
-              <span class="unselectable">%</span>
-            </div>
-            <div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://kit.fontawesome.com/3da1a747b2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/percentage-calc-favicon.png">
+  <title>Percentage Calculator</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="unselectable">Percentage Calculator</h2>
+    <h6 class="unselectable">Click on result to copy to clipboard</h6>
+    <div class="methods-wrapper">
+      <div class="method-container percent-from">
+        <div class="left-elements mobile-column">
+          <div>
+            <span class="unselectable">What is</span>
+            <input class="modern percent mobile-align" onkeydown="return (event.keyCode!=188);" type="number"
+              id="from-first-input"></input>
+            <span class="unselectable">%</span>
+          </div>
+          <div>
             <span class="unselectable"><span class="spacing-desktop"></span>of</span>
-              <input class="modern long-input mobile-align mobile-from" type="number" onkeydown="return (event.keyCode!=188);" id="from-second-input"></input>
-              <span class="unselectable">?<span class="mobile-from-label"></span></span>
-            </div>
-          </div>
-          <div class="right-elements">
-            <span class="result-text unselectable">=</span>
-            <input class="modern result resultmouse margin-right" readonly id="from-result-input"></input>
+            <input class="modern long-input mobile-align mobile-from" type="number"
+              onkeydown="return (event.keyCode!=188);" id="from-second-input"></input>
+            <span class="unselectable">?<span class="mobile-from-label"></span></span>
           </div>
         </div>
-        <div class="method-container percent-of">
-          <div class="left-elements mobile-column">
-            <div>
-              <input class="modern long-input no-margin-left mobile-align" type="number" onkeydown="return (event.keyCode!=188);" id="of-first-input"></input>
-              <span class="unselectable">is what % </span>
-            </div>
-            <div>
-              <span class="unselectable"><span class="spacing-desktop"></span>of</span>
-              <input class="modern long-input mobile-align mobile-of" type="number" onkeydown="return (event.keyCode!=188);" id="of-second-input"></input>
-              <span class="unselectable">?</span>
-            </div>
-          </div>
-          <div class="right-elements">
-            <span class="result-text unselectable mobile-of-label">=</span>
-            <input class="modern percent resultmouse mobile-result-of" readonly id="of-result-input"></input>
-            <span class="unselectable">%</span>
-          </div>
-        </div>
-        <div class="method-container percent-increase">
-          <div class="left-elements mobile-column tablet-column">
-            <div>
-              <span class="unselectable">In<span class="mobile-expand"></span>/<span class="mobile-expand-second"></span>Decrease <span class="mobile-expand-third"></span>%</span>
-            </div>
-            <div>
-              <span class="unselectable"><span class="spacing-desktop"></span>from</span>
-              <input class="modern long-input mobile-align mobile-increase-first" onkeydown="return (event.keyCode!=188);" type="number" id="increase-first-input"></input>
-            </div>
-            <div>
-              <span class="unselectable">to</span>
-              <input class="modern long-input mobile-align mobile-increase-second" onkeydown="return (event.keyCode!=188);" type="number" id="increase-second-input"></input>
-              <span class="unselectable">?</span>
-            </div>
-          </div>
-          <div class="right-elements">
-            <span class="result-text unselectable mobile-increase-label">=</span>
-            <input class="modern percent resultmouse mobile-result-increase" readonly id="increase-result-input"></input>
-            <span class="unselectable">%</span>
-          </div>
+        <div class="right-elements">
+          <span class="result-text unselectable">=</span>
+          <input class="modern result resultmouse margin-right" readonly id="from-result-input"></input>
         </div>
       </div>
-      <div class="setting">
-        <div class="option">
-          <label class="vertical-align unselectable">Convert results to german notation</label>
-          <button class="btn convert convert-dark" id="button-convert">
-            <i class="fas fa-sync-alt" id="convert-symbol"></i>
-          </button>
-        </div>
-        <div class="option">
-          <label class="unselectable">Round to second decimal place</label>
-          <div class="switch-align">
-            <label class="switch">
-              <input type="checkbox" id="switch-rounding" checked />
-              <div></div>
-            </label>
+      <div class="method-container percent-of">
+        <div class="left-elements mobile-column">
+          <div>
+            <input class="modern long-input no-margin-left mobile-align" type="number"
+              onkeydown="return (event.keyCode!=188);" id="of-first-input"></input>
+            <span class="unselectable">is what % </span>
+          </div>
+          <div>
+            <span class="unselectable"><span class="spacing-desktop"></span>of</span>
+            <input class="modern long-input mobile-align mobile-of" type="number"
+              onkeydown="return (event.keyCode!=188);" id="of-second-input"></input>
+            <span class="unselectable">?</span>
           </div>
         </div>
-        <div class="option">
-          <div class="" onclick="" id="theme-symbol"></div>
-            <label class="unselectable">Dark Mode</label>
-            <div class="switch-align">
-              <label class="switch">
-                <input type="checkbox" id="switch-theme" checked />
-                <div></div>
-              </label>
-            </div>
+        <div class="right-elements">
+          <span class="result-text unselectable mobile-of-label">=</span>
+          <input class="modern percent resultmouse mobile-result-of" readonly id="of-result-input"></input>
+          <span class="unselectable">%</span>
+        </div>
+      </div>
+      <div class="method-container percent-increase">
+        <div class="left-elements mobile-column tablet-column">
+          <div>
+            <span class="unselectable">In<span class="mobile-expand"></span>/<span
+                class="mobile-expand-second"></span>Decrease <span class="mobile-expand-third"></span>%</span>
+          </div>
+          <div>
+            <span class="unselectable"><span class="spacing-desktop"></span>from</span>
+            <input class="modern long-input mobile-align mobile-increase-first" onkeydown="return (event.keyCode!=188);"
+              type="number" id="increase-first-input"></input>
+          </div>
+          <div>
+            <span class="unselectable">to</span>
+            <input class="modern long-input mobile-align mobile-increase-second"
+              onkeydown="return (event.keyCode!=188);" type="number" id="increase-second-input"></input>
+            <span class="unselectable">?</span>
           </div>
         </div>
-        <div class="author">
-          <div class="spacing-left author-text unselectable">Made with</div>
-          <a class="heart-anchor" href="https://github.com/SaschaWebDev"><div class="heart"></div></a>
-          <div class="author-text unselectable">by <a href="http://www.saschamajewsky.de">Sascha Majewsky</a></div>
+        <div class="right-elements">
+          <span class="result-text unselectable mobile-increase-label">=</span>
+          <input class="modern percent resultmouse mobile-result-increase" readonly id="increase-result-input"></input>
+          <span class="unselectable">%</span>
         </div>
       </div>
     </div>
+    <div class="setting">
+      <div class="option">
+        <label class="vertical-align unselectable">Convert results to german notation</label>
+        <button class="btn convert convert-dark" id="button-convert">
+          <i class="fas fa-sync-alt" id="convert-symbol"></i>
+        </button>
+      </div>
+      <div class="option">
+        <label class="unselectable">Round to second decimal place</label>
+        <div class="switch-align">
+          <label class="switch">
+            <input type="checkbox" id="switch-rounding" checked />
+            <div></div>
+          </label>
+        </div>
+      </div>
+      <div class="option">
+        <div class="" onclick="" id="theme-symbol"></div>
+        <label class="unselectable">Dark Mode</label>
+        <div class="switch-align">
+          <label class="switch">
+            <input type="checkbox" id="switch-theme" checked />
+            <div></div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="author">
+      <div class="spacing-left author-text unselectable">Made with</div>
+      <a class="heart-anchor" href="https://github.com/SaschaWebDev">
+        <div class="heart"></div>
+      </a>
+      <div class="author-text unselectable">by <a href="http://www.saschamajewsky.de">Sascha Majewsky</a></div>
+    </div>
+  </div>
+  </div>
 
-    <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 
-  </body>
+</body>
+
 </html>
